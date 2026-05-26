@@ -1,6 +1,6 @@
 # DE10-Lite HW Workflow
 
-Write HDL in **any editor**, drive Quartus from the terminal — a `hw_workflow.py`-based
+Write HDL in **any editor**, drive Quartus (v25.x) from the terminal — a `hw_workflow.py`-based
 FPGA development environment for the Intel DE10-Lite (MAX10). Build, simulate,
 program, and develop Nios V software from a single Windows-native script.
 
