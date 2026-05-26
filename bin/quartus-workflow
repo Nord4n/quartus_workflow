@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# quartus-workflow -- thin shell wrapper that invokes hw_workflow.py from any directory.
+#
+# Added to PATH by setup_env.ps1. After running setup_env.ps1 and reloading
+# the shell, 'quartus-workflow <command>' is equivalent to
+# 'python3 hw_workflow.py <command>' and can be called from any directory.
+HW_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+exec python3 "$HW_DIR/hw_workflow.py" "$@"

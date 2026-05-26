@@ -1,0 +1,24 @@
+# hw_workflow.toml — HW module configuration
+# Edit paths to match your Quartus project.
+# Run: python3 hw_workflow.py --help
+
+[tools]
+quartus_version = "25.1"
+device          = "10M50DAF484C7G"  # DE10-Lite MAX 10 FPGA device
+board           = "de10-lite"       # board name — selects pin assignments and top template
+simulator       = "modelsim"        # ghdl | modelsim
+# quartus_base = "C:/altera_lite/25.1std/quartus/bin64"  # optional: override tool search path
+# niosv_base   = "C:/altera_lite/25.1std/niosv/bin"      # optional: override niosv-bsp search path
+# riscfree     = "C:/altera_lite/25.1std/riscfree/RiscFree/RiscFree.exe"  # optional: override IDE path
+
+[project]
+name     = "my_project"
+hdl_lang = "vhdl"
+
+[files]
+qpf      = "quartus_workspace/<project>/<name>.qpf"
+qsys     = "quartus_workspace/<project>/<name>.qsys"
+sof      = "quartus_workspace/<project>/output_files/<name>.sof"
+sopcinfo = "quartus_workspace/<project>/<name>.sopcinfo"
+# bsp_dir = "software/hal_bsp"  # optional: default is <sopcinfo-dir>/software/<type>_bsp
+# app_dir = "software/app"      # optional: default is <sopcinfo-dir>/software/app
