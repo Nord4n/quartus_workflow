@@ -1,0 +1,33 @@
+# Quartus build outputs
+quartus_build/
+sopc_information/
+
+# Quartus workspace — user project files; not part of the workflow module
+quartus_workspace/
+
+# Platform Designer session temp directory
+.qsys_edit/
+
+# FPGA bitstreams and programming files
+*.sof
+*.pof
+*.jic
+*.rbf
+
+# Platform Designer generated files
+*.sopcinfo
+
+# VUnit simulation output
+vunit_out/
+sim/vunit_out/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+
+# Nios V software build artefacts (should live inside quartus_workspace/)
+sw/
+software/
+app/
