@@ -1,14 +1,8 @@
 # Quartus HW Workflow
 
-<<<<<<< HEAD
-Write HDL in **any editor**, drive Quartus from the terminal — a `hw_workflow.py`-based
+Write HDL in **any editor**, drive Quartus (v25.x) from the terminal — a `hw_workflow.py`-based
 Intel FPGA development environment, developed and tested on the DE10-Lite (MAX10).
 Build, simulate, program, and develop Nios V software from a single Windows-native script.
-=======
-Write HDL in **any editor**, drive Quartus (v25.x) from the terminal — a `hw_workflow.py`-based
-FPGA development environment for the Intel DE10-Lite (MAX10). Build, simulate,
-program, and develop Nios V software from a single Windows-native script.
->>>>>>> 4f943b9edaf899cb62eeeb8a796ab58c665958eb
 
 > Runs natively on **Windows** (PowerShell or CMD).
 
