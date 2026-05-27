@@ -1,8 +1,8 @@
-# DE10-Lite HW Workflow
+# Quartus HW Workflow
 
 Write HDL in **any editor**, drive Quartus from the terminal — a `hw_workflow.py`-based
-FPGA development environment for the Intel DE10-Lite (MAX10). Build, simulate,
-program, and develop Nios V software from a single Windows-native script.
+Intel FPGA development environment, developed and tested on the DE10-Lite (MAX10).
+Build, simulate, program, and develop Nios V software from a single Windows-native script.
 
 > Runs natively on **Windows** (PowerShell or CMD).
 
@@ -60,7 +60,8 @@ quartus-workflow console-load   # load app.bin into on-chip memory via JTAG
 
 ### Hardware
 
-- DE10-Lite FPGA board (MAX10) + USB cable (USB Blaster onboard)
+- Any Intel/Altera FPGA board with Quartus Prime support + USB cable (USB Blaster)
+- Developed and tested on the **DE10-Lite** (MAX10) — DE10-Lite board files and example project included
 
 ### Software
 
