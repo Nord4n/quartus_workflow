@@ -83,37 +83,24 @@ begin
     empty <= '1' when cnt = 0     else '0';
     count <= std_logic_vector(cnt);
 
-    -- Write port
-    process (clk) is
-    begin
-        if rising_edge(clk) then
-            if do_write = '1' then
-                mem(to_integer(wr_ptr)) <= wr_data;
-                wr_ptr <= wr_ptr + 1;
-            end if;
-        end if;
-    end process;
-
-    -- Read port (registered output — 1-cycle read latency)
-    process (clk) is
-    begin
-        if rising_edge(clk) then
-            if do_read = '1' then
-                rd_data <= mem(to_integer(rd_ptr));
-                rd_ptr  <= rd_ptr + 1;
-            end if;
-        end if;
-    end process;
-
-    -- Pointer and count management
+    -- Single process: each signal has exactly one driver (avoids multi-driver metavalue).
     process (clk) is
     begin
         if rising_edge(clk) then
             if rst_n = '0' then
-                wr_ptr <= (others => '0');
-                rd_ptr <= (others => '0');
-                cnt    <= (others => '0');
+                wr_ptr  <= (others => '0');
+                rd_ptr  <= (others => '0');
+                cnt     <= (others => '0');
+                rd_data <= (others => '0');
             else
+                if do_write = '1' then
+                    mem(to_integer(wr_ptr)) <= wr_data;
+                    wr_ptr <= wr_ptr + 1;
+                end if;
+                if do_read = '1' then
+                    rd_data <= mem(to_integer(rd_ptr));
+                    rd_ptr  <= rd_ptr + 1;
+                end if;
                 case std_logic_vector'(do_write & do_read) is
                     when "10"   => cnt <= cnt + 1;
                     when "01"   => cnt <= cnt - 1;
